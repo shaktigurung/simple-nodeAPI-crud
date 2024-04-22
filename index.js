@@ -12,6 +12,7 @@ app.use(express.urlencoded({extended: false}));
 //routes
 app.use('/api/products', productRoute)
 
+const PORT = process.env.PORT || 3000
 
 mongoose.connect(process.env.MONGODB_URL)
   .then(() => {
@@ -23,8 +24,6 @@ mongoose.connect(process.env.MONGODB_URL)
   .catch(() => {
       console.log("Connection failed")
   });
-
-const PORT = 3000
 
 
 
